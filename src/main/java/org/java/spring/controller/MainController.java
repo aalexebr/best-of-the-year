@@ -28,6 +28,8 @@ public class MainController extends MainControllerFunctions{
 	public String movie(Model model) {
 		List <Movie> movieList = getMovieList();
 		String movieStringList = getMovieListAsString(movieList);
+		
+		
 		model.addAttribute("x", movieStringList);
 		return "movies";
 	}
@@ -48,7 +50,7 @@ public class MainController extends MainControllerFunctions{
 		
 		model.addAttribute("movie", x);
 		
-		return "movies";
+		return "single-movie";
 	}
 	
 	@GetMapping("/songs/{id}")
@@ -58,9 +60,8 @@ public class MainController extends MainControllerFunctions{
 		
 		model.addAttribute("song", x);
 		
-		return "songs";
+		return "single-song";
 	}
-	
 	
 
 }

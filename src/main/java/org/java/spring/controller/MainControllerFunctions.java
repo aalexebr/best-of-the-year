@@ -36,6 +36,21 @@ public class MainControllerFunctions {
 		return movieList;
 	}
 	
+	protected Movie getMovieFromListWithId(List<Movie> list, int id) {
+		
+		Movie x = null;
+		List <Movie> movieList = getMovieList();
+		for (Movie element : movieList) {
+			if(element.getId() == id) {
+				x = element;
+				break;
+			}
+		}
+		
+		return x;
+		
+	}
+	
 	protected String getSongListAsString(List<Song> list) {
 		String finalStr = "";
 		int counter = 0;
@@ -64,20 +79,7 @@ public class MainControllerFunctions {
 		return movieList;
 	}
 	
-	protected Movie getMovieFromListWithId(List<Movie> list, int id) {
-		
-		Movie x = null;
-		List <Movie> movieList = getMovieList();
-		for (Movie element : movieList) {
-			if(element.getId() == id) {
-				x = element;
-				break;
-			}
-		}
-		
-		return x;
-		
-	}
+
 	
 	protected Song getSongFromListWithId(List<Song> list, int id) {
 		
