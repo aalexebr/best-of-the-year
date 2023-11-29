@@ -10,12 +10,16 @@
 <title>home</title>
 </head>
 <body>
-	<div class="vh-100 vw-100 d-flex justify-content-center align-items-center position-relative">
-		<div th:insert="fragments :: button(@{/}, home)" class="position-absolute top-0 start-0"></div>
-		<h1 class="text-center">
-			[[${song}]]
-		</h1>
+	<div th:insert="fragments :: card(element)">
+  		
 	</div>
 	
+	<a
+		th:fragment="button(link, title)"
+		th:href="${link}"
+		th:text="${title}"
+		class="btn btn-primary"
+		>
+	</a>
 </body>
 </html>

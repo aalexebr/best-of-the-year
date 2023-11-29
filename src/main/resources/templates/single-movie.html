@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<!-- html tag with Thymeleaf -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap CSS -->
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}"/>
+<title>home</title>
 </head>
 <body>
-	[[${movie}]]
+	<div class="vh-100 vw-100 d-flex justify-content-center align-items-center position-relative">
+		<div th:insert="fragments :: button(@{/}, home)" class="position-absolute top-0 start-0"></div>
+		<h1 class="text-center">
+			[[${movie}]]
+		</h1>
+	</div>
+	
 </body>
 </html>

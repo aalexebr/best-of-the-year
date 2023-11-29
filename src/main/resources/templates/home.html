@@ -1,12 +1,37 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<!-- html tag with Thymeleaf -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap CSS -->
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}"/>
+<title>home</title>
 </head>
 <body>
-	<h1>
-		Best of the year by [[${x}]]
-	</h1>
+	<div class="container border mt-5 p-0">
+		<header class="d-flex mb-4 ">
+			<div class="col-4 text-center border p-3"> best of </div>
+			<div class="border p-3 col-8">
+				<a th:href="@{/movies}" type="button" class="btn btn-primary">movies</a>
+				<a th:href="@{/songs}" type="button" class="btn btn-primary">songs</a>
+			</div>
+		</header>
+		<main>
+			<h1 class="text-center">
+				Best of the year by [[${x}]]
+			</h1>
+			<div class="text-center my-4">
+				<img class="mx-auto" alt="water" th:src="@{/img/water.jpg}" />
+			</div>
+		</main>
+		<footer class="text-center mt-4 border">
+			this is a footer.
+		</footer>
+		
+	</div>
+	
+	
 </body>
 </html>

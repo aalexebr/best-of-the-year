@@ -27,10 +27,10 @@ public class MainController extends MainControllerFunctions{
 	@GetMapping("/movies")
 	public String movie(Model model) {
 		List <Movie> movieList = getMovieList();
-		String movieStringList = getMovieListAsString(movieList);
+//		String movieStringList = getMovieListAsString(movieList);
 		
 		
-		model.addAttribute("x", movieStringList);
+		model.addAttribute("x", movieList);
 		return "movies";
 	}
 	
@@ -38,7 +38,7 @@ public class MainController extends MainControllerFunctions{
 	public String songs(Model model) {
 		List <Song> movieList = getSongList();
 		String movieStringList = getSongListAsString(movieList);
-		model.addAttribute("x", movieStringList);
+		model.addAttribute("x", movieList);
 		return "songs";
 	}
 	
@@ -48,7 +48,7 @@ public class MainController extends MainControllerFunctions{
 		
 		Movie x = getMovieFromListWithId(getMovieList(),id);
 		
-		model.addAttribute("movie", x);
+		model.addAttribute("movie",x != null ? x : "(404) not found");
 		
 		return "single-movie";
 	}
@@ -58,7 +58,7 @@ public class MainController extends MainControllerFunctions{
 		Song x = getSongFromListWithId(getSongList(),id);
 		List <Song> movieList = getSongList();
 		
-		model.addAttribute("song", x);
+		model.addAttribute("song", x != null ? x : "(404) not found");
 		
 		return "single-song";
 	}
