@@ -11,14 +11,8 @@
 </head>
 <body>
 	<div class="container">
-		<header class="d-flex my-4 ">
-			<div class="col-4 text-center border p-3"> best of </div>
-			<div class="border p-3 col-8">
-				<a th:href="@{/movies}" type="button" class="btn btn-primary">movies</a>
-				<a th:href="@{/songs}" type="button" class="btn btn-primary">songs</a>
-				<a th:href="@{/}" type="button" class="btn btn-primary">home</a>
-			</div>
-		</header>
+		
+		<div th:insert="fragments :: header" class="mt-4"></div>
 		<main>
 			<h1 class="text-center">Movies:</h1>
 			<div class="d-flex flex-wrap justify-content-center ">
