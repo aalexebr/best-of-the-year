@@ -20,7 +20,6 @@
 					<div class="d-flex flex-wrap justify-content-center">
 						<div th:each="movie : ${x}" class="col-12 py-2">
 							<div class="card text-center p-2">
-								 <a th:href="@{/movies/{id}(id=${movie.id})}">[[${movie.title}]]</a>
 								<div th:insert="fragments :: button(@{/movies/{id}(id=${movie.id})}, ${movie.title})"></div>
 							</div>
 						</div>
